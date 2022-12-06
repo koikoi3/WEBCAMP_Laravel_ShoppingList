@@ -1,0 +1,57 @@
+<!DOCUTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>買い物リスト（一覧画面）</title>
+    </head>
+    <body>
+        <h1>「買うもの」の登録</h1>
+            <form action="./top.html" method="post">
+                「買うもの」名:<input><br>
+                <button>「買うもの」を登録する</button>
+            </form>
+        
+        <h1>「買うもの」一覧</h1>
+        <a href="./top.html">購入済み「買うもの」一覧</a><br>
+        <table border="1">
+        <tr>
+            <th>登録日
+            <th>「買うもの」名
+        <tr>
+            <td>2022/01/01
+            <td>ごま
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか?");' >完了</button></form>
+            <td width="10px"></td>
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか?");' >削除</button></form>
+        <tr>
+            <td>2022/01/15
+            <td>そば
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか?");' >完了</button></form>
+            <td width="10px"></td>
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか?");' >削除</button></form>
+        <tr>
+            <td>2022/02/01
+            <td>だんご
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか?");' >完了</button></form>
+            <td width="10px"></td>
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか?");' >削除</button></form>
+        <tr>
+            <td>2022/02/15
+            <td>もち
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか?");' >完了</button></form>
+            <td width="10px"></td>
+            <td><form style="margin: 0px;" action="{{ route('complete', ['task_id' => $task->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「削除」します。よろしいですか?");' >削除</button></form>
+        </table>
+        <!--ページネーション-->
+        現在 1 ページ目<br>
+        <a href="./top.html">最初のページ</a> /
+        <a href="./top.html">前に戻る</a> /
+        <a href="./top.html">次に進む</a>
+        <br>
+        <hr>
+        <menu label="リンク">
+        <a href="./index.html">ログアウト</a><br>
+        </menu>
+    </body>
+</html>

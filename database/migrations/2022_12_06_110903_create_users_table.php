@@ -22,7 +22,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             //$table->timestamps();
             $table->dateTime('created_at')->useCurrent();
-            $table->dateTime('updated_at')->useCurrentOnUpdate();
+            $table->dateTime('updated_at')->useCurrent()->useCurrentOnUpdate();
+            //$table->dateTime('updated_at')->useCurrentOnUpdate();
             //
             $table->collation = 'utf8mb4_bin';
         });

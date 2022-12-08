@@ -14,15 +14,17 @@ class CreateCompletedShoppingListsTable extends Migration
     public function up()
     {
         Schema::create('completed_shopping_lists', function (Blueprint $table) {
-            $table->unsignedInteger('id');
+            $table->id();
             $table->string('name', 128)->comment('「買うもの」名');
-            $table->unsignedBigInteger('user_id')->comment('この「買うもの」の所有者');
-            $table->foreign('user_id')->references('id')->on('users'); // 外部キー制約
+            //$table->integer('user_id')->unsigned()->change()->comment('この「買うもの」の所有者');
+            //$table->foreign('user_id')->references('id')->on('users'); // 外部キー制約
             //$table->timestamps();
             $table->dateTime('created_at')->useCurrent();
             $table->dateTime('updated_at')->useCurrent()->useCurrentOnUpdate();
             //
-            $table->primary('id');
+            //$table->primary('id');
+            //
+            $table->collation = 'utf8mb4_bin';
         });
     }
 

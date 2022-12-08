@@ -39,7 +39,7 @@
             <th>「買うもの」名
 @foreach ($list as $shopping_list)
         <tr>
-            <td>{{ $shopping_list->created_at->format('Y-m-d') }}
+            <td>{{ $shopping_list->created_at->format('Y/m/d') }}
             <td>{{ $shopping_list->name }}
             <td><form style="margin: 0px;" action="{{ route('complete', ['shopping_list_id' => $shopping_list->id]) }}" method="post"> @csrf <button onclick='return confirm("この「買うもの」を「完了」にします。よろしいですか?");' >完了</button></form></td>
             <td width="20px"></td>

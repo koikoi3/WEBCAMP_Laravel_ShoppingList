@@ -17,7 +17,7 @@ class CompletedShoppingListController extends Controller
     {
         return CompletedShoppingModel::where('user_id', Auth::id())
                      ->orderBy('name', 'asc')
-                     ->orderBy('created_at', 'desc')
+                     ->orderBy('created_at', 'asc')
                      ->orderBy('updated_at');
     }
     
